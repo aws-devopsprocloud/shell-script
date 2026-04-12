@@ -15,6 +15,7 @@ do
     # if [ $USAGE -gt "$THRESHOLD" ]
     if (( ${USAGE%\%} > ${THRESHOLD%\%} ))
     then 
-        echo "High Disk Usage on $VOLUME : $USAGE"
+        # echo "High Disk Usage on $VOLUME : $USAGE"
+        MESSSAGE="High Disk Usage on $VOLUME : $USAGE"
     fi
 done <<< $DISK_USAGE
