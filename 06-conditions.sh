@@ -4,7 +4,7 @@ echo "What is today ?"
 
 read TODAY
 
-if [ $TODAY -ne "Sunday" ]
+if [ $TODAY -ne Sunday ]
 then 
     echo "Today is $TODAY not a Holiday, Go to School"
 else
