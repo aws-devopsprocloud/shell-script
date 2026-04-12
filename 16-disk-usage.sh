@@ -2,7 +2,7 @@
 
 DISK_USAGE=$(df -hT | grep -vE 'tmp|File|efi')
 THRESHOLD=25%
-MESSSAGE=""
+MESSAGE=""
 
 # If disk usage is more than the threshold then 
 
@@ -16,8 +16,9 @@ do
     if (( ${USAGE%\%} > ${THRESHOLD%\%} ))
     then 
         # echo "High Disk Usage on $VOLUME : $USAGE"
-        MESSSAGE+="High Disk Usage on $VOLUME : $USAGE\n"
+        MESSAGE="High Disk Usage on $VOLUME : $USAGE"
     fi
 done <<< $DISK_USAGE
 
 echo "$MESSAGE"
+
