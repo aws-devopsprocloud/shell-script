@@ -4,6 +4,7 @@ ID=$(id -u)
 DATE=$(date +%H-%M-%S)
 LOGFILE=/tmp/$0-$DATE.log
 
+echo "Script started executing at $DATE"
 VALIDATE () {
     if [ $? -ne 0 ]
         then
