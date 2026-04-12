@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 DISK_USAGE=$(df -hT | grep -vE 'tmp|File|efi')
-THRESHOLD=25
+THRESHOLD=25%
 MESSSAGE=""
 
 # If disk usage is more than the threshold then 
