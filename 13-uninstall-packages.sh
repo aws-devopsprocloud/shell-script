@@ -36,3 +36,5 @@ else
         fi
     done
 fi
+
+echo -e "Find the uninstallation logs in $ Y $LOGFILE $N"
