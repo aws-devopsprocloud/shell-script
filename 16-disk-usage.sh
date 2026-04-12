@@ -22,5 +22,5 @@ done <<< $DISK_USAGE
 
 echo -e "$MESSAGE"
 
-echo "Subject: High Disk Usage\n\n$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
+echo "Subject: High Disk Usage\n\n" "$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
 
