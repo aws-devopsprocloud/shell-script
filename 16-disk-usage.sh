@@ -8,7 +8,8 @@ MESSSAGE=""
 
 while IFS= read -r line 
 do 
-    USAGE=$(echo $line | awk '{print $6F}' | cut -d % -f1)
+    # USAGE=$(echo $line | awk '{print $6F}' | cut -d % -f1)
+    USAGE=$(echo $line | awk '{print $6F}')
     VOLUME=$(echo $line | awk '{print $1F}')
     
     if [ $USAGE -gt $THRESHOLD ]
