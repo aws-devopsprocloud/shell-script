@@ -11,7 +11,7 @@ else
     then 
         yum install mysql -y 
     else 
-        echo "Nginx is already installed"
+        echo "MySQL is already installed"
     fi
 fi 
 
