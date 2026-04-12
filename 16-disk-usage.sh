@@ -22,5 +22,7 @@ done <<< $DISK_USAGE
 
 echo -e "$MESSAGE"
 
-echo "Subject: High Disk Usage\n\n" "$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
+# echo "Subject: High Disk Usage\n\n" "$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
+
+sh mail.sh "premsagar.eri@devopsprocloud.in" "High Disk Usage Alert" "$MESSAGE" "HIGH_DISK_USAGE"
 
