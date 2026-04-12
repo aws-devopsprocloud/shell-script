@@ -3,11 +3,10 @@
 ID=$(id -u)
 DATE=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$0-$DATE.log
-#PACKAGE=("mysql", "nginx", "postfix")
 
 echo "Script started executing at $DATE"
 
-# FUNCTION ---------
+# USING MULTIPLE FUNCTIONS ---------
 
 VALIDATE () {
     if [ $1 -ne 0 ]
