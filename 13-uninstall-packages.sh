@@ -7,23 +7,26 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+DATE=$(date +%F-%H-%M-%S)
+
+LOGFILE=/tmp/$0-$DATE.log
 
 VALIDATE () {
     if [ $1 -ne 0 ]
     then 
-        echo "$2 uninstallation $R FAILED $N"
+        echo -e "$2 uninstallation $R FAILED $N"
     else 
-        echo "$2 uninstallation $G SUCCESS $N"
+        echo -e "$2 uninstallation $G SUCCESS $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then 
-    echo "$R ERROR: $N Please run this script with root access"
+    echo -e "$R ERROR: $N Please run this script with root access"
 else 
     for PACKAGE in $@
     do 
-        yum list installed $PACKAGE
+        yum list installed $PACKAGE &>> $LOGFILE
         if [ $? == 0 ]
         then 
             yum remove $PACKAGE -y 
