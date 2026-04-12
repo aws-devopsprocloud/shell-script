@@ -12,6 +12,6 @@ else
         echo "Username : $f1"
         echo "User ID : $f3"
         echo "Home Directory : $f6"
-        echo "Shell : $f7"
+        # echo "Shell : $f7"
     done < $FILE # use single < to insert the files; triple <<< to insert folder/directory;
 fi
