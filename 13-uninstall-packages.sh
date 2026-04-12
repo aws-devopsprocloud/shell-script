@@ -29,7 +29,7 @@ else
         yum list installed $PACKAGE &>> $LOGFILE
         if [ $? == 0 ]
         then 
-            yum remove $PACKAGE -y 
+            yum remove $PACKAGE -y &>> $LOGFILE
             VALIDATE $? "$PACKAGE"
         else 
             echo -e "$Y $PACKAGE does not exist $N"
