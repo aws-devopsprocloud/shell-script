@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-FILES_TO_DELETE=$(find $DIRECTORY -type f -mtime +14 -name "*.log")
+
 
 
 echo "Please enter the source Directory: "
@@ -12,6 +12,7 @@ then
     exit 1
 else 
     echo "Source Directory : $DIRECTORY exist"
+    FILES_TO_DELETE=$(find $DIRECTORY -type f -mtime +14 -name "*.log")
     while IFS= read -r line 
     do 
         echo "Deleting : $line"
