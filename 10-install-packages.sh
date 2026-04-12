@@ -22,10 +22,10 @@ VALIDATE1 () {
     if [ $1 -ne 0 ]
     then 
         yum install $2 -y &>> $LOGFILE
-        VALIDATE $? "$PACKAGE"
+        VALIDATE $? "$2"
         
     else 
-        echo "$PACKAGE is already installed"
+        echo "$2 is already installed"
     fi
 }    
 
@@ -36,22 +36,8 @@ then
 else 
     for PACKAGE in $@ 
     do
-        yum list installed | grep $PACKAGE &>> $LOGFILE
+        yum list installed $PACKAGE &>> $LOGFILE
         VALIDATE1 $? "$PACKAGE"
     done
-
-    #     yum list installed | grep nginx &>> $LOGFILE
-    #     VALIDATE1 $? "$PACKAGE"
-    # for PACKAGE in $@ 
-    # do 
-    #     yum list installed $PACKAGE &>> $LOGFILE
-    #     if [ $? -ne 0 ] # If not installed
-    #     then
-    #         yum install $package -y &>> $LOGFILE # install the package
-    #         VALIDATE $? "Installing $package" # validate 
-    #     else
-    #         echo -e "$package is already installed...$Y SKIPPING $N." # If installed already give the output
-    #     fi
-    # done
 fi 
 
