@@ -19,3 +19,5 @@ do
         MESSSAGE="High Disk Usage on $VOLUME : $USAGE"
     fi
 done <<< $DISK_USAGE
+
+echo "$MESSAGE"
