@@ -17,15 +17,19 @@ VALIDATE () {
     fi
 }
 
-
-for PACKAGE in $@
-do 
-    yum list installed $PACKAGE
-    if [ $? == 0 ]
-    then 
-        yum remove $PACKAGE -y 
-        VALIDATE $? "$PACKAGE"
-    else 
-        echo "$PACKAGE does not exist"
-    fi
-done
+if [ $ID -ne 0 ]
+then 
+    echo "$R ERROR: $N Please run this script with root access"
+else 
+    for PACKAGE in $@
+    do 
+        yum list installed $PACKAGE
+        if [ $? == 0 ]
+        then 
+            yum remove $PACKAGE -y 
+            VALIDATE $? "$PACKAGE"
+        else 
+            echo "$PACKAGE does not exist"
+        fi
+    done
+fi
