@@ -29,7 +29,8 @@ else
         yum list installed $PACKAGE &>> $LOGFILE
         if [ $? == 0 ]
         then 
-            yum remove $PACKAGE -y | tee -a $LOGFILE
+            # yum remove $PACKAGE -y | tee -a $LOGFILE
+            yum remove $PACKAGE -y | &>> $LOGFILE
             VALIDATE $? "$PACKAGE"
         else 
             echo -e "$Y $PACKAGE does not exist $N"
@@ -37,4 +38,4 @@ else
     done
 fi
 
-echo -e "Find the uninstallation logs in $ Y $LOGFILE $N"
+echo -e "Find the uninstallation logs in $Y $LOGFILE $N"
