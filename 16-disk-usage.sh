@@ -12,7 +12,7 @@ do
     USAGE=$(echo $line | awk '{print $6F}')
     VOLUME=$(echo $line | awk '{print $1F}')
     
-    if [ $USAGE -gt $THRESHOLD ]
+    if [ $USAGE -gt "$THRESHOLD" ]
     then 
         echo "High Disk Usage on $VOLUME : $USAGE"
     fi
