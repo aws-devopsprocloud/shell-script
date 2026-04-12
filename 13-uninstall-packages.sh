@@ -30,7 +30,7 @@ else
         if [ $? == 0 ]
         then 
             # yum remove $PACKAGE -y | tee -a $LOGFILE
-            yum remove $PACKAGE -y | &>> $LOGFILE
+            yum remove $PACKAGE -y &>> $LOGFILE
             VALIDATE $? "$PACKAGE"
         else 
             echo -e "$Y $PACKAGE does not exist $N"
