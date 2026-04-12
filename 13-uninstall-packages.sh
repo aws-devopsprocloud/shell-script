@@ -32,7 +32,7 @@ else
             yum remove $PACKAGE -y 
             VALIDATE $? "$PACKAGE"
         else 
-            echo "$PACKAGE does not exist"
+            echo -e "$Y $PACKAGE does not exist $N"
         fi
     done
 fi
