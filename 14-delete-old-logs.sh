@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14)
+FILES_TO_DELETE=$(find $DIRECTORY -type f -mtime +14)
 
 
 echo "Please enter the source Directory: "
@@ -12,4 +12,9 @@ then
     exit 1
 else 
     echo "Source Directory : $DIRECTORY exist"
+    while IFS= read -r line 
+    do 
+        echo "Deleting : $line"
+        # rm -rf $line
+    done <<< $FILES_TO_DELETE
 fi
