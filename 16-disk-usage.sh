@@ -16,7 +16,7 @@ do
     if (( ${USAGE%\%} > ${THRESHOLD%\%} ))
     then 
         # echo "High Disk Usage on $VOLUME : $USAGE"
-        MESSSAGE+="High Disk Usage on $VOLUME : $USAGE"
+        MESSSAGE+="High Disk Usage on $VOLUME : $USAGE\n"
     fi
 done <<< $DISK_USAGE
 
