@@ -17,5 +17,5 @@ else
     do 
         echo "Deleting : $line"
         rm -rf $line
-    done <<< $FILES_TO_DELETE
+    done <<< $FILES_TO_DELETE # use single < to insert the files; triple <<< to insert folder/directory;
 fi
