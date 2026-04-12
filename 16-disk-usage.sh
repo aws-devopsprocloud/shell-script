@@ -8,8 +8,8 @@ MESSSAGE=""
 
 while IFS= read -r line 
 do 
-    USAGE=$(df -hT | grep -vE 'tmp|File|efi' | awk '{print $6F}' | cut -d % -f1)
-    VOLUME=$(df -hT | grep -vE 'tmp|File|efi' | awk '{print $1F}')
+    USAGE=$(echo $line | awk '{print $6F}' | cut -d % -f1)
+    VOLUME=$(echo $line | awk '{print $1F}')
     
     if [ $USAGE -gt $THRESHOLD ]
     then 
