@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-FILES_TO_DELETE=$(find $DIRECTORY -type f -mtime +14)
+FILES_TO_DELETE=$(find $DIRECTORY -type f -mtime +14 -name "*.log")
 
 
 echo "Please enter the source Directory: "
