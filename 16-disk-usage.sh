@@ -10,6 +10,9 @@ while IFS= read -r line
 do 
     USAGE=$(df -hT | grep -vE 'tmp|File|efi' | awk '{print $6F}')
     VOLUME=$(df -hT | grep -vE 'tmp|File|efi' | awk '{print $1F}')
-    echo "High Disk Usage on $VOLUME : $USAGE"
-
+    
+    if [ $USAGE -gt $THRESHOLD ]
+    then 
+        echo "High Disk Usage on $VOLUME : $USAGE"
+    fi
 done <<< $DISK_USAGE
