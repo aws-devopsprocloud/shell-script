@@ -9,5 +9,7 @@ read DIRECTORY
 if [ ! -d $DIRECTORY ] # ! - denotes not exist
 then 
     echo " ERROR: The Source Directory : $DIRECTORY is not found"
+    exit 1
 else 
+    # echo "Source Directory : $DIRECTORY exist"
 fi
