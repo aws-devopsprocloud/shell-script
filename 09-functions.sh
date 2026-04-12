@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=$(id -u)
-DATE=$(date +%H-%M-%S)
+DATE=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$0-$DATE.log
 
 echo "Script started executing at $DATE"
