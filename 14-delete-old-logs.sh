@@ -14,7 +14,7 @@ else
     FILES_TO_DELETE=$(find $DIRECTORY -type f -mtime +14 -name "*.log")
     while IFS= read -r line 
     do 
-        MESSAGE+="Deleted : $line"
+        MESSAGE+="Deleted : $line <br>"
         rm -rf $line
     done <<< $FILES_TO_DELETE # use single < to insert the files; triple <<< to insert folder/directory;
 fi
