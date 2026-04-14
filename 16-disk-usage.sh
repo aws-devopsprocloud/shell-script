@@ -43,4 +43,11 @@ echo -e "$MESSAGE"
 
 # $MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
 
-sh mail.sh "premsagar.eri@devopsprocloud.in" "High Disk Usage Alert on $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "Systems Team"
+sh mail.sh "premsagar.eri@devopsprocloud.in" "High Disk Usage Alert on $IP_ADDRESS" "$MESSAGE" "High Disk Usage" "$IP_ADDRESS" "DevOps Team"
+
+# To Address
+# Subject
+# Body Message
+# Alert Type
+# IP Address
+# To Team
