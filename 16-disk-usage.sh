@@ -24,5 +24,15 @@ echo -e "$MESSAGE"
 
 # echo "Subject: High Disk Usage\n\n" "$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
 
-sh mail.sh "premsagar.eri@devopsprocloud.in" "High Disk Usage Alert" "$MESSAGE" "HIGH_DISK_USAGE"
+# sh mail.sh "premsagar.eri@devopsprocloud.in" "High Disk Usage Alert" "$MESSAGE" "HIGH_DISK_USAGE"
+
+if [ -n "$MESSAGE" ]; then
+
+echo -e "Subject: High Disk Usage Alert
+From: premsagar.eri@gmail.com
+To: premsagar.eri@devopsprocloud.in
+
+$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
+
+fi
 
