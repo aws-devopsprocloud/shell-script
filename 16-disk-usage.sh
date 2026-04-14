@@ -52,5 +52,5 @@ echo -e "$MESSAGE"
 # Alert Type
 # IP Address
 
-sh mail.sh "prem@gmail.com" "High Disk Usage on $IP_ADDRESS" "DevOps team" "$MESSAGE" "High Disk Usage" "$IP_ADDRESS"
+sh mail.sh "premsagar.eri@devospprocloud.in" "High Disk Usage on $IP_ADDRESS" "DevOps team" "$MESSAGE" "High Disk Usage" "$IP_ADDRESS"
 
