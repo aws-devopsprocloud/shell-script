@@ -3,6 +3,7 @@
 DISK_USAGE=$(df -hT | grep -vE 'tmp|File|efi')
 THRESHOLD=25%
 MESSAGE=""
+IP_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 # If disk usage is more than the threshold then 
 
@@ -36,8 +37,10 @@ echo -e "$MESSAGE"
 
 # fi
 
-echo -e "Subject: High Disk Usage Alert
-From: premsagar.eri@gmail.com
-To: premsagar.eri@devopsprocloud.in
+# echo -e "Subject: High Disk Usage Alert
+# From: premsagar.eri@gmail.com
+# To: premsagar.eri@devopsprocloud.in
 
-$MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
+# $MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
+
+sh mail.sh "premsagar.eri@devopsprocloud.in" "High Disk Usage Alert on $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "Systems Team"
