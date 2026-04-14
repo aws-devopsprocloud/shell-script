@@ -37,7 +37,6 @@ echo -e "$MESSAGE"
 # fi
 
 echo -e "Subject: High Disk Usage Alert
-    From: premsagar.eri@gmail.com
-    To: premsagar.eri@devopsprocloud.in
-
+From: premsagar.eri@gmail.com
+To: premsagar.eri@devopsprocloud.in
 $MESSAGE" | msmtp premsagar.eri@devopsprocloud.in
